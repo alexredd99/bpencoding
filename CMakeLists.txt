@@ -12,8 +12,9 @@ set(SONAME 10)
 add_subdirectory(re2)
 
 add_library(tokenizer tokenizer/bpe.cc tokenizer/bpe.h ${RE2_SOURCES})
-target_compile_features(tokenizer PUBLIC cxx_std_11)
+target_compile_features(tokenizer PRIVATE cxx_std_11)
 target_include_directories(tokenizer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/re2)
+target_include_directories(tokenizer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/tokenizer)
 set_target_properties(tokenizer PROPERTIES SOVERSION ${SONAME} VERSION ${SONAME}.0.0)
 
 if(APPLE)

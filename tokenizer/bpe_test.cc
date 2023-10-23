@@ -1,3 +1,5 @@
+#include <cassert>
+
 #include "bpe.h"
 
 RE2 re(

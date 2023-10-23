@@ -1,3 +1,7 @@
+#include <string>
+#include <locale>
+#include <climits>
+
 #include "bpe.h"
 
 std::wstring utf8_to_wstring(const std::string& str) {
